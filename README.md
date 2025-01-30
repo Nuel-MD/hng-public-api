@@ -1,75 +1,98 @@
-# Public API for HNG12 Task
+## HNG Public API
 
-## Description
-This project is a simple Node.js API built with Express. It provides a publicly accessible endpoint that returns JSON-formatted information including:
-- The registered email address used on the HNG12 Slack workspace.
-- The current datetime in ISO 8601 format.
-- The GitHub URL of the project repository.
-
-## Technologies Used
-- Node.js
-- Express.js
-- CORS middleware
-- Vercel for deployment
+This is a simple public API that returns basic information in JSON format. It provides:
+- Your registered email address on the HNG12 Slack workspace.
+- The current datetime in ISO 8601 format (UTC).
+- The GitHub URL of the project's codebase.
 
 ## API Endpoint
+
+### Base URL
+```
+https://hng-public-edh107r12-muogbo-emmanuels-projects.vercel.app/
+```
+
 ### GET /
-#### Response Format (200 OK):
+#### Response Format (200 OK)
 ```json
 {
-  "email": "your-email@example.com",
+  "email": "eimuogbo@gmail.com",
   "current_datetime": "2025-01-30T09:30:00Z",
-  "github_url": "https://github.com/yourusername/your-repo"
+  "github_url": "https://github.com/Nuel-MD/hng-public-api"
 }
 ```
 
-## Setup Instructions
+---
+
+## Technology Stack
+- **Backend**: Node.js with Express
+- **Hosting**: Vercel
+- **CORS Handling**: Enabled with `cors` middleware
+
+## Installation & Setup
+
 ### Prerequisites
 Ensure you have the following installed:
-- Node.js (v14+ recommended)
+- Node.js (v16 or later recommended)
 - Git
 
-### Installation Steps
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
-   ```
-2. Install dependencies:
-   ```sh
-   npm install
-   ```
-3. Run the server locally:
-   ```sh
-   node index.js
-   ```
-4. The API will be accessible at:
-   ```sh
-   http://localhost:3000/
-   ```
+### Clone the Repository
+```sh
+git clone https://github.com/Nuel-MD/hng-public-api.git
+cd hng-public-api
+```
 
-## Deployment to Vercel
-### Steps to Deploy
-1. Install Vercel CLI:
-   ```sh
-   npm install -g vercel
-   ```
-2. Login to Vercel:
-   ```sh
-   vercel login
-   ```
-3. Deploy the project:
-   ```sh
-   vercel
-   ```
-4. Follow the prompts and confirm deployment. A public URL will be generated.
+### Install Dependencies
+```sh
+npm install
+```
 
-## Reference Link
-[Hire Node.js Developers](https://hng.tech/hire/nodejs-developers)
+### Run Locally
+```sh
+node index.js
+```
+The server will start on `http://localhost:3000/`.
+
+### Deploying to Vercel
+Ensure you have the [Vercel CLI](https://vercel.com/docs/cli) installed, then run:
+```sh
+vercel --prod
+```
 
 ---
 
-### Notes:
-- Ensure to update `your-email@example.com` with your actual HNG12 Slack email.
-- Replace `yourusername/your-repo` with your actual GitHub repository URL.
-- Double-check deployment by visiting the generated Vercel URL.
+## API Documentation
+### **GET /**
+#### **Request**
+- Method: `GET`
+- URL: `https://hng-public-edh107r12-muogbo-emmanuels-projects.vercel.app/`
+
+#### **Response**
+```json
+{
+  "email": "eimuogbo@gmail.com",
+  "current_datetime": "2025-01-30T09:30:00Z",
+  "github_url": "https://github.com/Nuel-MD/hng-public-api"
+}
+```
+
+#### **Possible Responses**
+| Status Code | Description        |
+|------------|--------------------|
+| 200        | Success            |
+| 500        | Server Error       |
+
+---
+
+## Additional Information
+- This API is publicly accessible and can be used for testing.
+- The response is dynamically generated, ensuring accurate timestamps.
+
+For more Node.js developers: [https://hng.tech/hire/nodejs-developers](https://hng.tech/hire/nodejs-developers)
+
+---
+
+## Author
+- **Emmanuel Muogbo**  
+- GitHub: [@Nuel-MD](https://github.com/Nuel-MD)
+
