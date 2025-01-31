@@ -1,30 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const fetch = require('node-fetch');  // Ensure 'node-fetch' is installed
+require('dotenv').config();
+
 const app = express();
 const port = process.env.PORT || 3000;
-require('dotenv').config();
 
 // Middleware
 app.use(cors());
-
-// Make API call
-fetch('https://example.com/protected-url', {
-    method: 'GET',
-    headers: {
-        'Authorization': `Bearer ${process.env.BEARER_TOKEN}`
-    }
-})
-.then(response => {
-    if (!response.ok) {
-        throw new Error('API request failed with status ' + response.status);
-    }
-    return response.json();
-})
-.then(data => console.log(data))
-.catch(error => {
-    console.error('Error:', error);
-});
 
 // Route to handle the GET request
 app.get('/', (req, res) => {
